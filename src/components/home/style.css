@@ -1,0 +1,103 @@
+.slideshow-container {
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+}
+
+.slides-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 2;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dotPlacement {
+  position: absolute;
+  bottom: 10px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+.aboutUS {
+  background: rgba(255, 255, 255, 0.534);
+  box-shadow: 2px 2px 8px 0.3px rgb(151, 148, 148);
+}
+
+.aboutUsContainer {
+  width: 100%;
+  height: auto;
+  background: url('../../images/homePage/tag-bg.jpg') center no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.resFont {
+  font-size: clamp(14px, 1vw + 1rem, 32px);
+  /* font-size: clamp(min(2vw, 5rem), 20px, max(5vw, 10rem)); */
+}
+
+
+.productContainer {
+  width: 100%;
+  background: linear-gradient(to right, rgba(224, 39, 39, 0.466), rgba(235, 8, 8, 0.774)),
+    url('../../images/homePage/b-bg-img.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+}
