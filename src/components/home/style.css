@@ -1,3 +1,5 @@
+@import url(https://use.fontawesome.com/releases/v5.7.1/css/all.css);
+
 .slideshow-container {
   overflow: hidden;
   position: relative;
@@ -68,28 +70,121 @@
   background-color: #717171;
 }
 
+.aboutUS-container {
+  height: auto;
+  padding: 2rem 1rem;
+}
+
 .aboutUS {
   background: rgba(255, 255, 255, 0.534);
   box-shadow: 2px 2px 8px 0.3px rgb(151, 148, 148);
-}
-
-.aboutUsContainer {
+  position: relative;
   width: 100%;
   height: auto;
-  background: url('../../images/homePage/tag-bg.jpg') center no-repeat;
-  background-size: contain;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  flex-direction: column;
-  text-align: center;
+  min-height: 28vh;
+  margin: 40px 0;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.aboutUS::before {
+  width: 100%;
+  height: 100px;
+  content: "";
+  background: url('../../images/about-us-top.png') no-repeat center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.aboutUS::after {
+  width: 100%;
+  height: 100px;
+  content: "";
+  background: url('../../images/homePage/a-bg-shape-img.png') no-repeat center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .resFont {
-  font-size: clamp(14px, 1vw + 1rem, 32px);
-  /* font-size: clamp(min(2vw, 5rem), 20px, max(5vw, 10rem)); */
+  text-align: center;
+  margin: auto;
+  font-size: clamp(1.4rem, 4vw + 1rem, 4.5rem);
+  font-weight: 600;
+  word-wrap: break-word;
+  padding: 20px;
+  z-index: 1;
+  position: relative;
 }
+
+@media (max-width: 768px) {
+  .aboutUS {
+    padding: 1.5rem;
+    margin-top: 20px;
+  }
+
+  .resFont {
+    font-size: clamp(1.2rem, 3vw + 1rem, 3.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutUS {
+    padding: 1rem;
+    margin-top: 10px;
+  }
+
+  .resFont {
+    font-size: clamp(1rem, 2.5vw + 1rem, 2.5rem);
+  }
+}
+
+.product-slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.product-slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.product-slide {
+  flex: 0 0 100%; /* Each slide takes up the full width of the container */
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .product-slide {
+    flex: 0 0 50%; /* Two products per slide for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .product-slide {
+    flex: 0 0 100%; /* One product per slide for small screens */
+  }
+}
+
+.product-slider-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.product-prev-slide,
+.product-next-slide {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
 
 
 .productContainer {
@@ -100,4 +195,176 @@
   background-position: center;
   background-repeat: no-repeat;
   background-blend-mode: overlay;
+}
+
+.product-grid-img {
+  padding: 20px 15px 50px;
+}
+
+/* Additional media queries for responsive design */
+@media (max-width: 768px) {
+  .product-grid-img {
+    padding: 20px 10px 40px;
+  }
+
+  .productContainer {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid-img {
+    padding: 15px 5px 30px;
+  }
+
+  .productContainer {
+    padding: 10px;
+  }
+}
+
+.connectUs {
+  position: relative;
+  width: 100%;
+}
+
+.connectUs::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: url('../../images/homePage/petter-bg1.png') no-repeat left bottom;
+  background-size: auto;
+  z-index: 0;
+}
+
+.connectUs::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: url('../../images/homePage/petter-bg2.png') no-repeat right bottom;
+  background-size: auto;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .connectUs {
+    height: 40vh;
+  }
+
+  .connectUs::before,
+  .connectUs::after {
+    width: 100%; /* Make pseudo-elements cover the full width on mobile */
+    height: 50%; /* Adjust height as needed */
+    background-size: auto; /* Adjust background size to fit within the container */
+  }
+
+  .connectUs::before {
+    background-position: left center; /* Center the background image on mobile */
+  }
+
+  .connectUs::after {
+    background-position: right center; /* Center the background image on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .connectUs {
+    height: 30vh;
+  }
+
+  .connectUs::before,
+  .connectUs::after {
+    background-size: auto; /* Ensure background image covers the area on small screens */
+    height: 60%; /* Adjust height as needed for very small screens */
+  }
+}
+
+.social-buttons {
+  position: relative;
+  z-index: 10; /* Ensure social buttons are above pseudo-elements */
+}
+
+.social-icon {
+  padding: 10px;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 8px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon:hover {
+  opacity: 0.7;
+}
+
+ul {
+  position: relative;
+  z-index: 10; /* Ensure list items are above pseudo-elements */
+}
+
+.howContainer {
+  width: 100%;
+  height: auto; /* Adjust height to auto for better responsiveness */
+  background: linear-gradient(to right, rgba(172, 7, 11, 0.466), rgba(253, 151, 76, 0.774)),
+    url('../../images/homePage/cart-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  padding: 2rem; /* Added padding for better spacing */
+  box-sizing: border-box; /* Ensure padding is included in the width/height */
+}
+
+.title-text {
+  display: inline-block;
+  color: #e00; /* Red color */
+  background-color: #fff; /* White background */
+  padding: 1rem 2rem;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 25px;
+  font-size: 4.5rem; /* Default font size */
+  font-weight: bold;
+  margin-left: -20px !important;
+}
+
+.left img, .right img {
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) { /* Tablet */
+  .title-text {
+    font-size: 2rem; /* Smaller font size for tablets */
+  }
+
+  .left img, .right img {
+    max-width: 90%; /* Adjust image width */
+  }
+}
+
+@media (max-width: 768px) { /* Mobile */
+  .title-text {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+    padding: 0.5rem 1rem;
+  }
+
+  .howContainer {
+    padding: 1rem; /* Adjust padding for mobile */
+  }
+
+  .left img, .right img {
+    max-width: 100%; /* Ensure images fit within their container */
+  }
 }

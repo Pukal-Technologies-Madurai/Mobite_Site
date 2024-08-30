@@ -26,12 +26,12 @@ const FixedHeader = () => {
         },
         {
             name: 'How it\'s Made',
-            link: '/howItWorks',
+            link: '#',
             isActive: false,
         },
         {
             name: 'Contact Us',
-            link: '/contactUs',
+            link: '#',
             isActive: false,
         },
     ])
@@ -85,21 +85,21 @@ const FixedHeader = () => {
 
                         <span className='block lg:hidden'>
                             <IconButton size='small' className='me-2'>
-                                <Search className=' text-white' sx={{ fontSize: '20px' }} />
+                                <Search className=' text-white' sx={{ fontSize: '24px' }} />
                             </IconButton>
                         </span>
 
-                        <IconButton size='small' className='me-2'>
-                            <ShoppingCartOutlined className=' text-white' />
+                        <IconButton size='medium' className='me-2' >
+                            <ShoppingCartOutlined className=' text-white' sx={{ fontSize: '24px' }}/>
                         </IconButton>
 
-                        <IconButton size='small' className='me-2'>
+                        <IconButton size='medium' className='me-2'>
                             <img src={login} alt="" style={{ height: '20px', width: '20px' }} />
                         </IconButton>
 
                         <span className='block lg:hidden'>
                             <IconButton size='medium' className=''>
-                                <Menu className='text-white text-lg' sx={{ fontSize: '20px' }} />
+                                <Menu className='text-white text-lg' sx={{ fontSize: '24px' }} />
                             </IconButton>
                         </span>
                     </div>
