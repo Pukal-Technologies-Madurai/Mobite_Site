@@ -14,19 +14,20 @@ function HowItsMade() {
           <img
             src={youtube}
             alt="youtube"
-            className="w-full max-w-xs lg:max-w-2xl"
+            className="w-full max-w-xs lg:max-w-2xl wobble-hor-bottom"
           />
         </div>
         <div className="right flex flex-col items-center lg:items-start">
           <img
             src={youtubePic}
             alt="youtube"
-            className="w-full max-w-xs lg:max-w-5xl mb-4 lg:mb-0"
+            className="w-full max-w-xs lg:max-w-5xl mb-4 lg:mb-0 scale-in-bl"
+            // tracking-in-expand-fwd-top
           />
           <img
             src={youtubeText}
             alt="youtube"
-            className="w-full max-w-xs lg:max-w-5xl"
+            className="w-full max-w-xs lg:max-w-5xl text-pop-up-top"
           />
         </div>
       </div>

@@ -67,13 +67,13 @@ const HomeProductComp = () => {
                 <div className="flex flex-wrap product-grid-img">
 
                     {productsList.map((o, i) => (
-                        <div className="w-full sm:w-1/2 lg:w-1/3 p-4" key={i}>
+                        <div className="w-full sm:w-1/2 lg:w-1/3 p-4 wobble-hor-bottom" key={i}>
                             <CardComp bgImg={o.bg} productImg={o.img} bgColor={''} />
                             <div className="flex justify-center mt-8 lg:mt-16">
                                 <Link
-                                    to="../../pages/productDetail"
+                                    to="/productDetail"
                                     state={{ productImg: o.img, productName: o.name }} // Pass the image and other details
-                                    className="bg-transparent hover:bg-white m-auto text-[20px] sm:text-[25px] lg:text-[30px] px-6 sm:px-8 lg:px-10 text-white font-medium hover:text-red-500 py-2 border-2 border-white hover:border-red-800 rounded-full"
+                                    className="more-button bg-transparent hover:bg-white m-auto text-[20px] sm:text-[25px] lg:text-[30px] px-6 sm:px-8 lg:px-10 text-white font-medium hover:text-red-500 py-2 border-2 border-white hover:border-red-800 rounded-full"
                                 >More
                                 </Link>
                             </div>
