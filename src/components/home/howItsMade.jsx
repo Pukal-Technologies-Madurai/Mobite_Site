@@ -6,10 +6,12 @@ import youtubeText from "../../images/youtube-text.png";
 function HowItsMade() {
   return (
     <div className="howContainer py-10">
-      <div className="w-full">
-        <span className="title-text">HOW IT'S MADE&nbsp;&nbsp;</span>
+      <div className="w-full pt-5" >
+        <span className="howTitle">
+          HOW IT'S MADE&nbsp;&nbsp;
+        </span>
       </div>
-      <div className="flex flex-col lg:flex-row items-center justify-evenly gap-6 lg:gap-12">
+      <div className="flex flex-col lg:flex-row items-center justify-evenly gap-6 lg:gap-12 mt-8">
         <div className="left">
           <img
             src={youtube}
