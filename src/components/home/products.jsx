@@ -7,11 +7,11 @@ import productTwo from '../../images/homePage/packet3.png';
 import productThree from '../../images/homePage/packet1.png';
 import { Link } from 'gatsby';
 
-
 const CardComp = ({ bgImg, bgColor, productImg, title }) => {
 
     const sty = {
-        width: '100%',
+        width: '90%',
+        margin: 'auto',
         backgroundColor: bgColor,
         backgroundImage: `url(${bgImg})`,
         backgroundPosition: 'center',
@@ -19,13 +19,13 @@ const CardComp = ({ bgImg, bgColor, productImg, title }) => {
         backgroundRepeat: 'no-repeat',
         borderRadius: '15px',
         padding: '5% 2%',
-        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+        boxShadow: 'rgba(100, 100, 111, 0.6) 0px 7px 29px 0px'
     }
 
     return (
         <>
-            <div className="relative flex items-center justify-center" style={sty}>
-                <img src={productImg} alt={'product_img'} className='rounded-lg w-full h-auto p-40 mb-10 wobble-hor-bottom' />
+            <div className="relative flex justify-center items-center" style={sty}>
+                <img src={productImg} alt={'product_img'} className='rounded-lg w-full h-auto p-20 lg:mb-32 md:mb-16 sm:p-10 lg:p-20 wobble-hor-bottom'/>
                 {/* <h6>{title}</h6> */}
             </div>
         </>
@@ -38,19 +38,19 @@ const HomeProductComp = () => {
 
     const productsList = [
         {
-            name: 'MASALA MANIA',
+            name: 'MOBITE CORN PUFF MASALA MANIA',
             img: productOne,
             bg: productBgOne,
             slug: '/masala-mania',
         },
         {
-            name: 'SWISS CHEESE',
+            name: 'MOBITE CORN PUFF SWISS CHEESE',
             img: productTwo,
             bg: productBgTwo,
             slug: '/swiss-cheese',
         },
         {
-            name: 'MIGHTY MINT',
+            name: 'MOBITE CORN PUFF MIGHTY MINT',
             img: productThree,
             bg: productBgThree,
             slug: '/mighty-mint',
@@ -60,9 +60,9 @@ const HomeProductComp = () => {
     return (
         <div className=' bg-white'>
             <div className='productContainer py-10'>
-            <div className="w-full pt-5 pl-0">
+            <div className="w-full pt-5 -ml-10" >
                 <span className="howTitle">
-                    PRODUCTS&nbsp;&nbsp;
+                    &nbsp;&nbsp;PRODUCTS&nbsp;
                 </span>
             </div>
 

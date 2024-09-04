@@ -1,11 +1,12 @@
 import * as React from "react";
 import FixedHeader from "../components/header/fixedHeader";
-import HomeComp from "../components/home";
+import HomeComp from "..";
 import '../styles/style.css';
 import '../styles/global.css';
 import sliderIMG1 from '../images/homePage/slider-design12.jpg';
+import sliderIMG1Mobile from '../images/homePage/slider-mobile.jpg';
 
-const IndexPage = () => {
+export default function IndexPage () {
   return (
     <main className="pageTheme">
       <meta charSet="utf-8" />
@@ -13,9 +14,11 @@ const IndexPage = () => {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
       <FixedHeader />
-      <HomeComp images={[sliderIMG1, sliderIMG1]} />
+      <HomeComp images={[
+          { desktop: sliderIMG1, mobile: sliderIMG1Mobile }
+        ]} 
+      />
     </main>
   );
 };
 
-export default IndexPage;

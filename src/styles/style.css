@@ -9,10 +9,10 @@ html {
 }
 
 body {
-    /* background: linear-gradient(to right, rgba(158, 226, 30, 0.562), rgba(221, 241, 38, 0.322)), url('../images/puff-img.png'); */
-    background: url('../images/puff-img.png');
+    background: linear-gradient(to right, rgba(255, 223, 0, 0.5), rgba(255, 255, 102, 0.5)), 
+        url('../images/puff-img.png');
+    /* background: url('../images/puff-img.png'); */
     background-color: #dfe3118f;
-    /* background-color: rgba(76, 224, 39, 0.466); */
     height: 100dvh;
     box-sizing: border-box;
     overflow: auto;
@@ -22,3 +22,4 @@ body {
     background-blend-mode: overlay;
 }
 /* #e1e311 */
+/* background-color: rgba(76, 224, 39, 0.466); */

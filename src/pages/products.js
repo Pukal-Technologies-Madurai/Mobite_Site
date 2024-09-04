@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from "react";
 import FixedHeader from '../components/header/fixedHeader'
 import Homefooter from '../components/home/homefooter'
 import HomeProductComp from '../components/home/products'
