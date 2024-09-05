@@ -9,12 +9,11 @@ import useMediaQuery from '@mui/material/useMediaQuery';  // Import useMediaQuer
 import { Link } from 'gatsby';
 
 const FixedHeader = () => {
-    const location = useLocation(); // Get current URL path
     const [navButtons, setNavButtons] = useState([
         { name: 'Home', link: '/', isActive: false },
         { name: 'About Us', link: '/aboutUs', isActive: false },
         { name: 'Products', link: '/products', isActive: false },
-        { name: 'How it\'s Made', link: '#', isActive: false },
+        { name: 'How it\'s Made', link: '#', isActive: false }, // This can stay as a button if external
         { name: 'Contact Us', link: '/contact', isActive: false },
     ]);
 
@@ -23,29 +22,11 @@ const FixedHeader = () => {
     // Media query to check if the screen is mobile/tablet size
     const isMobileOrTablet = useMediaQuery('(max-width: 1024px)');
 
-    useEffect(() => {
-        const path = location.pathname;
-        setNavButtons(prev =>
-            prev.map(btn =>
-                btn.link === path
-                    ? { ...btn, isActive: true }
-                    : { ...btn, isActive: false }
-            )
-        );
-    }, [location.pathname]);
-
+    // Function to toggle menu for mobile/tablet
     const toggleMenu = () => {
         if (isMobileOrTablet) {
-            setIsMenuOpen(!isMenuOpen); // Toggle the menu open state only for mobile/tablet
+            setIsMenuOpen(!isMenuOpen);
         }
-    };
-
-    const handleNavigate = (link) => {
-        console.log(link)
-        // navigate(link);
-        // if (isMobileOrTablet) {
-        //     toggleMenu(); // Close the menu after navigation only for mobile/tablet
-        // }
     };
 
     return (
@@ -53,23 +34,23 @@ const FixedHeader = () => {
             <div style={{ backgroundColor: '#7dc501' }} className='px-6 py-2 shadow-lg'>
                 <div className='p-3 flex justify-between items-center'>
                     <div className='flex items-center'>
-                        <a href="/"> 
+                        <a href="/">
                             <img src={AppLogo} alt="App Logo" width={130} />
                         </a>
                     </div>
 
-                    {/* Navigation Buttons for Desktop View */}
+                    {/* Navigation Links for Desktop View */}
                     <div className='grow px-2 float-start pl-44 hidden lg:flex'>
                         {navButtons.map((o, i) => (
-                            <button
+                            <Link
                                 key={i}
+                                to={o.link}
                                 className={`px-3 py-1 border-none rounded-md font-semibold hover:text-white mx-2
                                     ${o.isActive ? 'text-zinc-700 bg-white' : 'text-zinc-700'}`}
                                 style={{ fontSize: 'clamp(8px, 3vw + 2rem, 16px)' }}
-                                onClick={() => handleNavigate(o.link)}
                             >
                                 {o.name}
-                            </button>
+                            </Link>
                         ))}
                     </div>
 
@@ -95,7 +76,7 @@ const FixedHeader = () => {
                         </IconButton>
 
                         <IconButton size='medium' className='me-2'>
-                            <img src={login} alt="" style={{ height: '20px', width: '20px' }} />
+                            <img src={login} alt="Login" style={{ height: '20px', width: '20px' }} />
                         </IconButton>
 
                         {/* Menu Button for Mobile/Tablet View */}
@@ -114,10 +95,12 @@ const FixedHeader = () => {
                         open={isMenuOpen}
                         onClose={toggleMenu}
                     >
-                        <List>
+                        <List style={{ marginTop: '64px' }}>
                             {navButtons.map((o, i) => (
-                                <ListItem button key={i} onClick={() => handleNavigate(o.link)}>
-                                    <ListItemText primary={o.name} />
+                                <ListItem button key={i}>
+                                    <Link to={o.link}>
+                                        <ListItemText primary={o.name} />
+                                    </Link>
                                 </ListItem>
                             ))}
                         </List>
@@ -126,6 +109,6 @@ const FixedHeader = () => {
             </div>
         </div>
     );
-}
+};
 
 export default FixedHeader;

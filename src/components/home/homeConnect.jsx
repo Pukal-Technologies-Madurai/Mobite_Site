@@ -22,7 +22,7 @@ const HomeConnect = () => {
           <img src={twitter} alt="Twitter" className="social-img w-[30px] sm:w-[35px] md:w-[40px] lg:w-[45px]" />
         </div>
 
-        <ul className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8 mt-8 md:mt-12 lg:mt-16">
+        <ul className="flex flex-wrap justify-center gap-4 md:gap-6 md:mb-9 lg:gap-8 mt-8 md:mt-12 lg:mt-16">
           <li className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-medium">Contact us</li>
           <li className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-medium">FAQ</li>
           <li className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-medium">Terms & Conditions</li>
