@@ -7,7 +7,7 @@ import twitter from "../../images/twitter3.png";
 
 const HomeConnect = () => {
   return (
-    <div className="bg-[#009db4] relative h-[40vh] sm:h-[30vh] md:h-[30vh] lg:h-[40vh] flex items-center justify-start overflow-hidden connectUs">
+    <div className="bg-[#009db4] relative h-[40vh] sm:h-[30vh] md:h-[40vh] lg:h-[50vh] flex items-center justify-start overflow-hidden connectUs">
       <div className="relative flex flex-col items-center text-center my-4 px-4 sm:px-6 md:px-12 lg:px-44 xl:px-64">
         <img
           src={connect}
