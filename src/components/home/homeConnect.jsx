@@ -16,10 +16,18 @@ const HomeConnect = () => {
         />
 
         <div className="social-buttons flex justify-center space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-10 mt-4 md:mt-6">
-          <img src={facebook} alt="Facebook" className="social-img w-[30px] sm:w-[35px] md:w-[40px] lg:w-[45px]" />
-          <img src={youtube} alt="YouTube" className="social-img w-[30px] sm:w-[35px] md:w-[40px] lg:w-[45px]" />
-          <img src={instagram} alt="Instagram" className="social-img w-[30px] sm:w-[35px] md:w-[40px] lg:w-[45px]" />
-          <img src={twitter} alt="Twitter" className="social-img w-[30px] sm:w-[35px] md:w-[40px] lg:w-[45px]" />
+          <a href="https://www.facebook.com/people/Mobiteindia/61565652641786/" target="_blank" rel="noopener noreferrer">
+            <img src={facebook} alt="Facebook" className="social-img w-[30px] sm:w-[35px] md:w-[40px] lg:w-[45px]" />
+          </a>
+          <a href="https://www.instagram.com/mobiteindia/" target="_blank" rel="noopener noreferrer">
+            <img src={youtube} alt="YouTube" className="social-img w-[30px] sm:w-[35px] md:w-[40px] lg:w-[45px]" />
+          </a>
+          <a href="https://www.instagram.com/mobiteindia/" target="_blank" rel="noopener noreferrer">
+            <img src={instagram} alt="Instagram" className="social-img w-[30px] sm:w-[35px] md:w-[40px] lg:w-[45px]" />
+          </a>
+          <a href="https://www.x.com/mobiteindia/" target="_blank" rel="noopener noreferrer">
+            <img src={twitter} alt="Twitter" className="social-img w-[30px] sm:w-[35px] md:w-[40px] lg:w-[45px]" />
+          </a>
         </div>
 
         <ul className="flex flex-wrap justify-center gap-4 md:gap-6 md:mb-9 lg:gap-8 mt-8 md:mt-12 lg:mt-16">

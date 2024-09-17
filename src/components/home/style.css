@@ -70,7 +70,8 @@
   background-color: #717171;
 }
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
+
   .prev,
   .next {
     margin: -50px 0px;
@@ -88,7 +89,7 @@
 }
 
 .aboutUS-container {
-  width: 100%; 
+  width: 100%;
   padding: 2rem 0rem;
   display: flex;
   justify-content: center;
@@ -165,14 +166,15 @@
     margin-bottom: 25px;
   }
 
-  .aboutUS::after, .aboutUS::before {
+  .aboutUS::after,
+  .aboutUS::before {
     width: 100%;
     height: 25px;
   }
 
   .resFont {
     font-size: clamp(0.5rem, 2.5vw + 1rem, 1.5rem);
-    padding: 35px 2.5px;
+    padding: 20px 2.5px;
   }
 }
 
@@ -188,19 +190,19 @@
 }
 
 .product-slide {
-  flex: 0 0 100%; 
+  flex: 0 0 100%;
   box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
   .product-slide {
-    flex: 0 0 50%; 
+    flex: 0 0 50%;
   }
 }
 
 @media (max-width: 480px) {
   .product-slide {
-    flex: 0 0 100%; 
+    flex: 0 0 100%;
   }
 }
 
@@ -308,10 +310,11 @@
   .connectUs::before {
     display: none;
   }
+
   .connectUs::after {
-    width: 100%; 
-    height: 100%; 
-    background-size: contain; 
+    width: 100%;
+    height: 100%;
+    background-size: contain;
   }
 
   .connectUs::before {
@@ -333,14 +336,14 @@
   /* .connectUs::before, */
   .connectUs::after {
     display: none;
-    background-size: contain; 
-    height: 60%; 
+    background-size: contain;
+    height: 60%;
   }
 }
 
 .social-buttons {
   position: relative;
-  z-index: 10; 
+  z-index: 10;
 }
 
 .social-img {
@@ -350,7 +353,7 @@
   border-radius: 50%;
   background-color: transparent;
   padding: 10px;
-  object-fit: cover; 
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -369,12 +372,12 @@
 
 ul {
   position: relative;
-  z-index: 10; 
+  z-index: 10;
 }
 
 .howContainer {
   width: 100%;
-  height: auto; 
+  height: auto;
   background-color: #eb5f0f;
   background-image: url('../../images/homePage/cart-bg.png');
   /* background: linear-gradient(
@@ -387,8 +390,8 @@ ul {
   background-position: center;
   background-repeat: no-repeat;
   background-blend-mode: overlay;
-  padding: 2rem; 
-  box-sizing: border-box; 
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
 .howTitle {
@@ -404,12 +407,12 @@ ul {
 
 @media (max-width: 768px) {
   .howContainer {
-    padding: 1rem; 
+    padding: 1rem;
   }
 
   .howTitle {
     margin-left: 0;
-    font-size: clamp(1.5rem, 3.5vw, 3.5rem); 
+    font-size: clamp(1.5rem, 3.5vw, 3.5rem);
   }
 }
 
@@ -417,6 +420,7 @@ ul {
   .howContainer {
     padding: 0.5rem;
   }
+
   .howTitle {
     margin-left: 10px;
     padding: 0.5rem 1rem;
@@ -443,85 +447,152 @@ ul {
 }
 
 .wobble-hor-bottom:hover {
-  animation:wobble-hor-bottom .8s both
+  animation: wobble-hor-bottom .8s both
 }
 
 @keyframes wobble-hor-bottom {
-  0%, 100% {
-    transform:translateX(0);
-    transform-origin:50% 50%
-  } 15% {
-    transform:translateX(-30px) rotate(-6deg)
-  } 30% {
-    transform:translateX(15px) rotate(6deg)
-  } 45% {
-    transform:translateX(-15px) rotate(-3.6deg)
-  } 60% {
-    transform:translateX(9px) rotate(2.4deg)
-  } 75% {
-    transform:translateX(-6px) rotate(-1.2deg)
+
+  0%,
+  100% {
+    transform: translateX(0);
+    transform-origin: 50% 50%
+  }
+
+  15% {
+    transform: translateX(-30px) rotate(-6deg)
+  }
+
+  30% {
+    transform: translateX(15px) rotate(6deg)
+  }
+
+  45% {
+    transform: translateX(-15px) rotate(-3.6deg)
+  }
+
+  60% {
+    transform: translateX(9px) rotate(2.4deg)
+  }
+
+  75% {
+    transform: translateX(-6px) rotate(-1.2deg)
   }
 }
 
 .more-button:hover {
-  animation:vibrate-1 .3s linear infinite both
+  animation: vibrate-1 .3s linear infinite both
 }
 
-@keyframes vibrate-1{
+@keyframes vibrate-1 {
   0% {
-    transform:translate(0)
-  } 20% {
-    transform:translate(-2px,2px)
-  } 40% {
-    transform:translate(-2px,-2px)
-  } 60%{
-    transform:translate(2px,2px)
-  } 80% {
-    transform:translate(2px,-2px)
-  } 100%{
-    transform:translate(0)
+    transform: translate(0)
+  }
+
+  20% {
+    transform: translate(-2px, 2px)
+  }
+
+  40% {
+    transform: translate(-2px, -2px)
+  }
+
+  60% {
+    transform: translate(2px, 2px)
+  }
+
+  80% {
+    transform: translate(2px, -2px)
+  }
+
+  100% {
+    transform: translate(0)
   }
 }
 
-.text-pop-up-top{
-  animation:bounce-in-top 1.1s both
+.text-pop-up-top {
+  animation: bounce-in-top 1.1s both
 }
 
 @keyframes bounce-in-top {
-  0%{transform:translateY(-500px);animation-timing-function:ease-in;opacity:0}38%{transform:translateY(0);animation-timing-function:ease-out;opacity:1}55%{transform:translateY(-65px);animation-timing-function:ease-in}72%{transform:translateY(0);animation-timing-function:ease-out}81%{transform:translateY(-28px);animation-timing-function:ease-in}90%{transform:translateY(0);animation-timing-function:ease-out}95%{transform:translateY(-8px);animation-timing-function:ease-in}100%{transform:translateY(0);animation-timing-function:ease-out}
+  0% {
+    transform: translateY(-500px);
+    animation-timing-function: ease-in;
+    opacity: 0
+  }
+
+  38% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+    opacity: 1
+  }
+
+  55% {
+    transform: translateY(-65px);
+    animation-timing-function: ease-in
+  }
+
+  72% {
+    transform: translateY(0);
+    animation-timing-function: ease-out
+  }
+
+  81% {
+    transform: translateY(-28px);
+    animation-timing-function: ease-in
+  }
+
+  90% {
+    transform: translateY(0);
+    animation-timing-function: ease-out
+  }
+
+  95% {
+    transform: translateY(-8px);
+    animation-timing-function: ease-in
+  }
+
+  100% {
+    transform: translateY(0);
+    animation-timing-function: ease-out
+  }
 }
 
 .tracking-in-expand-fwd-top {
-  animation:tracking-in-expand-fwd-top .8s cubic-bezier(.215,.61,.355,1.000) both
+  animation: tracking-in-expand-fwd-top .8s cubic-bezier(.215, .61, .355, 1.000) both
 }
 
 @keyframes tracking-in-expand-fwd-top {
   0% {
-    letter-spacing:-.5em; 
-    transform:translateZ(-700px) translateY(-500px);
-    opacity:0
-  } 40% { 
-    opacity:.6
-  } 100% {
-    transform:translateZ(0) translateY(0);
-    opacity:1
+    letter-spacing: -.5em;
+    transform: translateZ(-700px) translateY(-500px);
+    opacity: 0
+  }
+
+  40% {
+    opacity: .6
+  }
+
+  100% {
+    transform: translateZ(0) translateY(0);
+    opacity: 1
   }
 }
 
 .scale-in-bl {
-  animation:scale-in-bl .5s cubic-bezier(.25,.46,.45,.94) both
+  animation: scale-in-bl .5s cubic-bezier(.25, .46, .45, .94) both
 }
 
 @keyframes scale-in-bl {
-  0% { 
-    transform:scale(0);
-    transform-origin:0 100%;
-    opacity:1
+  0% {
+    transform: scale(0);
+    transform-origin: 0 100%;
+    opacity: 1
   }
-  100% { 
-    transform:scale(1);
-    transform-origin:0 100%;
-    opacity:1
+
+  100% {
+    transform: scale(1);
+    transform-origin: 0 100%;
+    opacity: 1
   }
 }
 
@@ -538,7 +609,7 @@ ul {
 }
 
 .aboutContainer {
-  width: 100%; 
+  width: 100%;
   padding: 2rem 0rem;
   display: flex;
   justify-content: center;
@@ -624,11 +695,14 @@ ul {
 
   .about::after,
   .about::before {
-    height: 50px; /* Adjusted for mobile screens */
+    height: 50px;
+    /* Adjusted for mobile screens */
   }
 
   .aboutFont {
-    font-size: clamp(0.8rem, 1.5vw + 1rem, 1.5rem); /* Smaller text for mobile */
-    padding: 0.5rem 1rem; /* Adjust padding */
+    font-size: clamp(0.8rem, 1.5vw + 1rem, 1.5rem);
+    /* Smaller text for mobile */
+    padding: 0.5rem 1rem;
+    /* Adjust padding */
   }
 }

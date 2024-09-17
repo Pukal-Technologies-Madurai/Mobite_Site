@@ -10,7 +10,7 @@ function Homefooter() {
         className="w-48 sm:w-64 md:w-80 lg:w-40 mb-4"
       />
       <h4 className="text-xl sm:text-2xl md:text-3xl lg:text-2xl font-semibold text-center">
-        &copy; 2024 Mobite Inc. a Division of Pukal Foods
+        &copy; 2024 Mobite is the registered trade mark of Pukal Foods pvt ltd.
       </h4>
     </div>
   );

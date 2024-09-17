@@ -21,56 +21,49 @@ const ProductDetail = () => {
   return (
     <div>
       <FixedHeader />
-      <div className="flex flex-col lg:flex-row justify-center items-stretch mx-auto max-w-screen-xl p-4 lg:p-8 mt-32">
+      <div className="flex flex-col lg:flex-row justify-center items-stretch mx-auto max-w-screen-xl p-4 lg:p-8 mt-32 lg:mt-32">
         {/* Image Container */}
         <div className="w-full lg:w-1/2 flex justify-center items-center">
           <div
-            className="relative w-full h-[60vh] lg:h-[80vh] bg-gray-100 bg-cover bg-center shadow-lg"
+            className="relative w-full h-[60vh] lg:h-[80vh] bg-gray-100 shadow-lg flex justify-center items-center"
             style={{
               backgroundImage: productImgBg ? `url(${productImgBg})` : "none",
               backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
             }}
           >
             {productImg && (
               <img
                 src={productImg}
                 alt={productName}
-                className="absolute inset-0 w-full h-full object-contain"
-                style={{
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  padding: "20%",
-                  opacity: 1
-                }}
+                className="max-w-[90%] max-h-[90%] object-contain"
               />
             )}
           </div>
         </div>
 
         {/* Content Container */}
-        <div className="bg-white p-6 lg:p-8 w-full lg:w-1/2 lg:h-[80vh] shadow-lg flex flex-col">
-          <h1 className="text-2xl lg:text-5xl font-bold mb-4 p-4 bg-[#82dfed] border-b-8 border-[#416169]">
-            {productName}
-          </h1>
-          <h4 className="text-xl lg:text-4xl font-bold mb-2">
-            Description
-          </h4>
-          <p className="text-base lg:text-3xl text-gray-700 mb-8">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whole thing started from organically grown corn. we collect, baked, add Swiss Cheese and seasoning masala. Finally “Mobite” corn puff is ready to taste crispy & flavourly.
-          </p>
+        <div className="bg-white p-6 lg:p-8 w-full lg:w-1/2 shadow-lg flex flex-col justify-between">
+          <div>
+            <h1 className="text-2xl lg:text-4xl font-bold mb-4 p-4 bg-[#82dfed] border-b-8 border-[#416169]">
+              {productName}
+            </h1>
+            <h4 className="text-xl lg:text-2xl font-bold mb-2">Description</h4>
+            <p className="text-base lg:text-xl text-gray-700 mb-8 text-justify leading-relaxed">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whole thing started from organically grown corn. We collect, bake, add Swiss cheese, and seasoning masala. Finally, “Mobite” corn puff is ready to taste crispy & flavorful.
+            </p>
+          </div>
+
           <img
             src={nutrition}
             alt="Nutrition Facts"
-            className="w-[60%] h-[60%] object-contain mx-auto"
+            className="w-[40%] h-auto object-contain mx-auto"
           />
-          <div className="flex space-x-4 justify-center mt-8">
-            <button className="bg-[#009db4] text-white text-lg lg:text-3xl font-medium py-2 px-6 rounded-full hover:bg-white hover:border-[#009db4] hover:text-[#009db4] border border-transparent">
-              Add to cart
-            </button>
+
+          <div className="flex justify-center mt-8">
             <button
-              className="bg-transparent text-[#009db4] text-lg lg:text-3xl font-medium border border-[#009db4] py-2 px-6 rounded-full hover:bg-[#009db4] hover:text-white"
-              onClick={() => handleBuyNowClick()}
+              className="bg-transparent text-[#009db4] text-lg lg:text-2xl font-medium border border-[#009db4] py-2 px-6 rounded-full hover:bg-[#009db4] hover:text-white transition-colors"
+              onClick={handleBuyNowClick}
             >
               Buy Now
             </button>
@@ -82,12 +75,19 @@ const ProductDetail = () => {
         <div className="fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-50">
           <div className="bg-white rounded-lg shadow-lg p-6 w-[90%] lg:w-[50%] relative">
             <h2 className="text-2xl lg:text-4xl font-bold mb-4 text-center">
-              We’re coming soon!
+              Our Authorized Retailers
             </h2>
-            <p className="text-lg lg:text-2xl text-center text-gray-700">
-              Stay tuned. Our authorized retailers will be listed soon.
+            <p className="text-lg lg:text-2xl text-center text-gray-700 mb-4">
+              Visit our website to find the nearest retailer.
             </p>
-
+            <a
+              href="http://localhost:5173?brand=mobite"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#009db4] text-lg lg:text-2xl font-semibold underline text-center block mb-4"
+            >
+              shrifoodsindia
+            </a>
             <button
               onClick={handleCloseModal}
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
