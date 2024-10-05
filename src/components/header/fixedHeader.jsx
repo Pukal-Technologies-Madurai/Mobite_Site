@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import AppLogo from '../../images/homePage/logo-png-img.png';
 import search from '../../images/homePage/s-icon.png';
 import login from '../../images/homePage/login-icon.png';
 import { IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import { ShoppingCartOutlined, Menu, Search } from '@mui/icons-material';
-import { useLocation, navigate } from "@reach/router";
-import useMediaQuery from '@mui/material/useMediaQuery';  // Import useMediaQuery
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { Link } from 'gatsby';
 
 const FixedHeader = () => {
@@ -13,16 +12,14 @@ const FixedHeader = () => {
         { name: 'Home', link: '/', isActive: false },
         { name: 'About Us', link: '/aboutUs', isActive: false },
         { name: 'Products', link: '/products', isActive: false },
-        { name: 'How it\'s Made', link: '#', isActive: false }, // This can stay as a button if external
+        // { name: 'How it\'s Made', link: '#', isActive: false },
         { name: 'Contact Us', link: '/contact', isActive: false },
     ]);
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // State to control the menu visibility
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // Media query to check if the screen is mobile/tablet size
     const isMobileOrTablet = useMediaQuery('(max-width: 1024px)');
 
-    // Function to toggle menu for mobile/tablet
     const toggleMenu = () => {
         if (isMobileOrTablet) {
             setIsMenuOpen(!isMenuOpen);
@@ -39,7 +36,6 @@ const FixedHeader = () => {
                         </a>
                     </div>
 
-                    {/* Navigation Links for Desktop View */}
                     <div className='grow px-2 float-start pl-44 hidden lg:flex'>
                         {navButtons.map((o, i) => (
                             <Link
@@ -54,7 +50,6 @@ const FixedHeader = () => {
                         ))}
                     </div>
 
-                    {/* Search Input */}
                     <div className='flex items-center'>
                         <div className='rounded-3xl bg-white overflow-hidden lg:flex hidden items-center me-2'>
                             <input
@@ -88,7 +83,6 @@ const FixedHeader = () => {
                     </div>
                 </div>
 
-                {/* Drawer Menu for Mobile/Tablet View */}
                 {isMobileOrTablet && (
                     <Drawer
                         anchor='right'
