@@ -1,13 +1,16 @@
 import React from "react";
-import connect from "../../images/connect.png";
-import facebook from "../../images/facebook1.png";
-import youtube from "../../images/youtube4.png";
-import instagram from "../../images/instagram2.png";
-import twitter from "../../images/twitter3.png";
+import connect from "../images/connect.png";
+import facebook from "../images/facebook.png";
+import youtube from "../images/youtube.png";
+import instagram from "../images/instagram.png";
+import twitter from "../images/twitter.png";
+
+import leftSideImg from "../images/homePage/petter-bg1.png";
+import rightSideImg from "../images/homePage/petter-bg2.png";
 
 const HomeConnect = () => {
   return (
-    <div className="bg-[#009db4] relative h-[40vh] sm:h-[30vh] md:h-[40vh] lg:h-[50vh] flex items-center justify-start overflow-hidden connectUs">
+    <div className="bg-secondary relative h-[40vh] sm:h-[30vh] md:h-[40vh] lg:h-[50vh] flex items-center justify-start overflow-hidden">
       <div className="relative flex flex-col items-center text-center my-4 px-4 sm:px-6 md:px-12 lg:px-44 xl:px-64">
         <img
           src={connect}

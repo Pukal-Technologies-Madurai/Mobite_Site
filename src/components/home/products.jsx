@@ -1,93 +1,115 @@
-import React, { useEffect, useState } from 'react';
-import productBgOne from '../../images/homePage/cart-img01.png';
-import productBgTwo from '../../images/homePage/cart-img02.png';
-import productBgThree from '../../images/homePage/cart-img03.png';
-import productOne from '../../images/homePage/packet2.png';
-import productTwo from '../../images/homePage/packet3.png';
-import productThree from '../../images/homePage/packet1.png';
-import { Link } from 'gatsby';
+import React from "react";
+import { Link } from "gatsby";
+import masalaBg from "../../images/homePage/masala-cover.png";
+import cheeseBg from "../../images/homePage/cheese-cover.png";
+import mintBg from "../../images/homePage/mint-cover.png";
 
-const CardComp = ({ bgImg, bgColor, productImg, title }) => {
+import masala from "../../images/homePage/masala-img.png";
+import cheese from "../../images/homePage/cheese-img.png";
+import mint from "../../images/homePage/mint-img.png";
 
-    const sty = {
-        width: '90%',
-        margin: 'auto',
-        backgroundColor: bgColor,
-        backgroundImage: `url(${bgImg})`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        borderRadius: '15px',
-        padding: '5% 2%',
-        boxShadow: 'rgba(100, 100, 111, 0.6) 0px 7px 29px 0px'
-    }
+import backgroundImg from "../../images/homePage/products-background.png";
 
+const ProductCard = ({ product }) => {
     return (
-        <>
-            <div className="relative flex justify-center items-center" style={sty}>
-                <img src={productImg} alt={'product_img'} className='rounded-lg w-full h-auto p-20 lg:mb-32 md:mb-16 sm:p-10 lg:p-20 wobble-hor-bottom'/>
-                {/* <h6>{title}</h6> */}
-            </div>
-        </>
-    )
-}
-
-
-
-const HomeProductComp = () => {
-
-    const productsList = [
-        {
-            name: 'MOBITE CORN PUFF MASALA MANIA',
-            img: productOne,
-            bg: productBgOne,
-            slug: '/masala-mania',
-        },
-        {
-            name: 'MOBITE CORN PUFF SWISS CHEESE',
-            img: productTwo,
-            bg: productBgTwo,
-            slug: '/swiss-cheese',
-        },
-        {
-            name: 'MOBITE CORN PUFF MIGHTY MINT',
-            img: productThree,
-            bg: productBgThree,
-            slug: '/mighty-mint',
-        }
-    ]
-
-    return (
-        <div className=' bg-white'>
-            <div className='productContainer py-10'>
-            <div className="w-full pt-5 -ml-10" >
-                <span className="howTitle">
-                    &nbsp;&nbsp;PRODUCTS&nbsp;
-                </span>
-            </div>
-
-                <div className="flex flex-wrap product-grid-img">
-
-                    {productsList.map((o, i) => (
-                        <div className="w-full sm:w-1/2 lg:w-1/3 p-4" key={i}>
-                            <CardComp bgImg={o.bg} productImg={o.img} bgColor={''} />
-                            <div className="flex justify-center mt-8 lg:mt-16">
-                                <Link
-                                    to="/productDetail"
-                                    state={{ productImgBg: o.bg, productImg: o.img, productName: o.name }} // Pass the image and other details
-                                    className="more-button bg-transparent hover:bg-white m-auto text-[20px] sm:text-[25px] lg:text-[30px] px-6 sm:px-8 lg:px-10 text-white font-medium hover:text-red-500 py-2 border-2 border-white hover:border-red-800 rounded-full"
-                                >More
-                                </Link>
-                            </div>
-                        </div>
-                    ))}
-                    
-
+        <div className="relative w-full p-2 sm:p-3 md:p-4 lg:p-5">
+            <div
+                className="relative overflow-hidden rounded-2xl shadow-xl aspect-[3/4]"
+                style={{
+                    background: `url(${product.bg})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "top",
+                }}
+            >
+                <div className="absolute inset-0 grid place-items-center">
+                    <div className="w-4/5 h-4/5 relative flex items-center justify-center -mt-9">
+                        <img
+                            src={product.img}
+                            alt={product.name}
+                            className="w-auto h-auto max-w-[80%] max-h-[80%] object-contain hover:animate-wobbleHorBottom"
+                        />
+                    </div>
                 </div>
+            </div>
 
+            <div className="mt-4 sm:mt-5 md:mt-6 text-center">
+                <Link
+                    to="/productDetail"
+                    state={{
+                        productImgBg: product.bg,
+                        productImg: product.img,
+                        productName: product.name
+                    }}
+                    className="inline-block rounded-full border-2 border-white bg-transparent 
+                        px-3 sm:px-5 md:px-7 
+                        py-1.5 sm:py-2 md:py-2.5 
+                        text-sm sm:text-base md:text-lg 
+                        font-bold text-white 
+                        transition-all duration-300 
+                        hover:bg-white hover:text-red-600"
+                >
+                    More
+                </Link>
             </div>
         </div>
-    )
-}
+    );
+};
+
+const HomeProductComp = () => {
+    const productsList = [
+        {
+            name: "MOBITE CORN PUFF MASALA MANIA",
+            img: masala,
+            bg: masalaBg,
+            slug: "/masala-mania",
+        },
+        {
+            name: "MOBITE CORN PUFF SWISS CHEESE",
+            img: cheese,
+            bg: cheeseBg,
+            slug: "/swiss-cheese",
+        },
+        {
+            name: "MOBITE CORN PUFF MIGHTY MINT",
+            img: mint,
+            bg: mintBg,
+            slug: "/mighty-mint",
+        }
+    ];
+
+    return (
+        <section
+            className="relative overflow-hidden py-6 sm:py-8 md:py-12 lg:py-16 my-2"
+            style={{
+                background: `linear-gradient(to right, #fd974c, #ac070b), url(${backgroundImg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundBlendMode: "overlay"
+            }}
+        >
+            <div className="mx-auto px-4 sm:px-6 md:px-8">
+                {/* Title */}
+                <div className="flex justify-start -ml-4 sm:-ml-6 md:-ml-8 lg:-ml-10 xl:-ml-12 mb-8">
+                    <h2 className="bg-white inline-block 
+                        text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 
+                        font-bold text-[#D32F2F] 
+                        px-2 sm:px-4 md:px-6 lg:px-8
+                        py-[1.5px] sm:py-[2.5px] md:py-[3.5px] lg:py-[4.5px] 
+                        rounded-br-[1.5rem] rounded-tr-[0.25rem]">
+                        PRODUCTS
+                    </h2>
+                </div>
+
+                {/* Product Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 md:gap-6 lg:gap-8">
+                    {productsList.map((product, index) => (
+                        <ProductCard key={index} product={product} />
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
 
 export default HomeProductComp

@@ -1,102 +1,71 @@
 import React from "react";
-import FixedHeader from "../components/header/fixedHeader";
-import Homefooter from "../components/home/homefooter";
-import HomeConnect from "../components/home/homeConnect";
-import AppLogo from '../images/homePage/logo-png-img.png';
+import Layout from "../components/Layout";
+import { Mail, Phone, MapPin } from "lucide-react";
+import backgroundImg from "../../src/images/about-bg.png";
 
-export default function contact () {
+export default function contact() {
   return (
-    <React.Fragment>
-      <FixedHeader />
-      <div className="max-w-screen-xl mx-auto py-16 px-4 lg:px-8 my-16 lg:my-32 bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="text-left mb-8">
-          <h2 className="text-3xl lg:text-5xl font-bold text-[#009db4]">Get in Touch</h2>
-          <p className="text-lg lg:text-2xl text-gray-700 mt-4">
-            Have a question or need help? We're here to assist you.
-          </p>
-        </div>
+    <Layout>
+      <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 my-2"
+        style={{
+          background: `linear-gradient(to right, rgba(255, 223, 0, 0.6), rgba(255, 255, 102, 0.6)), url(${backgroundImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundBlendMode: "overlay"
+        }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-8">
+            <div className="lg:w-1/2 bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-2xl font-bold text-[#009db4]">Get in Touch</h2>
+              <p className="mb-7 text-black">Have a question or need help? We're here to assist you.</p>
+              <form className="space-y-4">
+                <input type="text" placeholder="Name" className="w-full p-3 border border-gray-300 rounded-md " required />
+                <input type="tel" placeholder="Phone Number" className="w-full p-3 border border-gray-300 rounded-md " required />
+                <input type="email" placeholder="Email" className="w-full p-3 border border-gray-300 rounded-md " required />
+                <input type="text" placeholder="Subject" className="w-full p-3 border border-gray-300 rounded-md " required />
+                <textarea placeholder="Your message" className="w-full p-3 border border-gray-300 rounded-md " rows="4" required></textarea>
+                <button type="submit" className="w-full bg-[#009db4] text-white p-3 rounded-md hover:bg-[#06292e] transition duration-300 ease-in-out transform hover:-translate-y-1">Send Message</button>
+              </form>
+            </div>
 
-        <div className="flex flex-col lg:flex-row justify-center items-stretch gap-8">
-          {/* Contact Form */}
-          <div className="w-full lg:w-1/2 p-6 lg:p-8 bg-white rounded-lg shadow-md">
-            <h3 className="text-2xl lg:text-4xl font-semibold text-gray-800 mb-4">Send Us a Message</h3>
-            <form className="space-y-6">
-              <div>
-                <label className="block text-lg lg:text-2xl font-medium text-gray-700 mb-2" htmlFor="name">
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:ring-[#009db4] focus:border-[#009db4]"
-                  required
-                />
+            <div className="lg:w-1/2 space-y-8">
+              <div className="bg-white rounded-lg shadow-lg p-8">
+                <h2 className="text-2xl font-bold mb-6 text-black">Contact Information</h2>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <MapPin className="text-[#009db4] mr-4" />
+                    <div>
+                      <strong>Shri Foods</strong>
+                      <p>DP.NO.CS 8, SIDCO Industrial Estate,</p>
+                      <p>near Kappalur, Madurai,</p>
+                      <p>Tamil Nadu 625008</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <Phone className="text-[#009db4] mr-4" />
+                    <p>+91 90253 16142</p>
+                  </div>
+                  <div className="flex items-center">
+                    <Mail className="text-[#009db4] mr-4" />
+                    <a href="mailto:pukalfoods@gmail.com" className="text-[#009db4] font-bold hover:underline">pukalfoods@gmail.com</a>
+                  </div>
+                </div>
               </div>
-              <div>
-                <label className="block text-lg lg:text-2xl font-medium text-gray-700 mb-2" htmlFor="phone">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:ring-[#009db4] focus:border-[#009db4]"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-lg lg:text-2xl font-medium text-gray-700 mb-2" htmlFor="email">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:ring-[#009db4] focus:border-[#009db4]"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-lg lg:text-2xl font-medium text-gray-700 mb-2" htmlFor="subject">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:ring-[#009db4] focus:border-[#009db4]"
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-[#009db4] text-white font-medium text-lg lg:text-xl py-3 rounded-lg hover:bg-[#007e8b] transition-colors"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
 
-          {/* Contact Information */}
-          <div className="w-full lg:w-1/2 p-6 lg:p-8 bg-white rounded-lg shadow-md flex flex-col justify-between">
-            <img src={AppLogo} alt="App Logo" width={150} className="mx-auto lg:mx-0" />
-            <h3 className="text-2xl lg:text-4xl font-semibold text-gray-800 mb-4 lg:mb-8">Our Contact Information</h3>
-            <div>
-              <p className="text-lg lg:text-2xl text-gray-600 mb-4">
-                <span className="font-semibold text-2xl">Address:</span> DP.NO.CS 8, SIDCO Industrial Estate,
-                <br /> &emsp;Kappalur, Madurai - 625008.
-              </p>
-              <p className="text-lg lg:text-2xl text-gray-600 mb-4">
-                <span className="font-semibold text-2xl">Phone:</span> +91 9025316142
-              </p>
-              <p className="text-lg lg:text-2xl text-gray-600">
-                <span className="font-semibold text-2xl">Email:</span> pukalfoods@gmail.com
-              </p>
+              <div className="bg-white rounded-lg shadow-lg p-4 h-80">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3931.1968784425735!2d78.0299635741444!3d9.833825675873847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00d15e9b826e2b%3A0x72d8eeda445cb1f3!2sShri%20Foods!5e0!3m2!1sen!2sin!4v1728039921892!5m2!1sen!2sin"
+                  frameBorder="0"
+                  className="w-full h-full rounded-md"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <HomeConnect />
-      <Homefooter />
-    </React.Fragment>
+    </Layout>
   );
 };
 
