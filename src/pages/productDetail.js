@@ -105,11 +105,11 @@ const ProductDetail = () => {
                   <button
                     onClick={handleBuyNowClick}
                     className="w-full sm:w-auto px-8 py-3 text-base sm:text-lg md:text-xl 
-                        bg-transparent text-[#009db4] font-medium 
-                        border-2 border-[#009db4] rounded-full 
-                        hover:bg-[#009db4] hover:text-white 
-                        transition-all duration-300 
-                        flex items-center justify-center mx-auto"
+                          bg-transparent text-[#009db4] font-medium 
+                          border-2 border-[#009db4] rounded-full 
+                          hover:bg-[#009db4] hover:text-white 
+                          transition-all duration-300 
+                          flex items-center justify-center mx-auto"
                   >
                     Buy Now
                   </button>

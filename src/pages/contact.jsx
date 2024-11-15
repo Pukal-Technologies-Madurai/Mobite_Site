@@ -4,6 +4,84 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import backgroundImg from "../../src/images/about-bg.png";
 
 export default function contact() {
+  const [formData, setFormData] = React.useState({
+    name: '',
+    phone: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+
+  const [notification, setNotification] = React.useState({
+    show: false,
+    message: '',
+    type: '',
+  });
+
+  const [loading, setLoading] = React.useState(false);
+
+  // Handle input change
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Basic validation
+    const { name, phone, email, subject, message } = formData;
+    if (!name || !phone || !email || !subject || !message) {
+      setNotification({
+        show: true,
+        message: 'All fields are required.',
+        type: 'error',
+      });
+      setTimeout(() => setNotification({ show: false, message: '', type: '' }), 5000);
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xvgornaq', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setNotification({
+          show: true,
+          message: "Message sent successfully! We'll get back to you soon.",
+          type: 'success',
+        });
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        throw new Error('Failed to send message.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setNotification({
+        show: true,
+        message: 'Failed to send message. Please try again later.',
+        type: 'error',
+      });
+    } finally {
+      setLoading(false);
+      setTimeout(() => setNotification({ show: false, message: '', type: '' }), 10000);
+    }
+  };
+
   return (
     <Layout>
       <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 my-2"
@@ -19,13 +97,70 @@ export default function contact() {
             <div className="lg:w-1/2 bg-white rounded-lg shadow-lg p-8">
               <h2 className="text-2xl font-bold text-[#009db4]">Get in Touch</h2>
               <p className="mb-7 text-black">Have a question or need help? We're here to assist you.</p>
-              <form className="space-y-4">
-                <input type="text" placeholder="Name" className="w-full p-3 border border-gray-300 rounded-md " required />
-                <input type="tel" placeholder="Phone Number" className="w-full p-3 border border-gray-300 rounded-md " required />
-                <input type="email" placeholder="Email" className="w-full p-3 border border-gray-300 rounded-md " required />
-                <input type="text" placeholder="Subject" className="w-full p-3 border border-gray-300 rounded-md " required />
-                <textarea placeholder="Your message" className="w-full p-3 border border-gray-300 rounded-md " rows="4" required></textarea>
-                <button type="submit" className="w-full bg-[#009db4] text-white p-3 rounded-md hover:bg-[#06292e] transition duration-300 ease-in-out transform hover:-translate-y-1">Send Message</button>
+              <form className="space-y-4" onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="Name"
+                  className="w-full p-3 border border-gray-300 rounded-md"
+                  required
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  placeholder="Phone Number"
+                  className="w-full p-3 border border-gray-300 rounded-md"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="Email"
+                  className="w-full p-3 border border-gray-300 rounded-md"
+                  required
+                />
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  placeholder="Subject"
+                  className="w-full p-3 border border-gray-300 rounded-md"
+                  required
+                />
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  placeholder="Your message"
+                  className="w-full p-3 border border-gray-300 rounded-md"
+                  rows="4"
+                  required
+                />
+                <button
+                  type="submit"
+                  className={`w-full bg-[#009db4] text-white p-3 rounded-md hover:bg-[#06292e] transition duration-300 ease-in-out transform hover:-translate-y-1 ${loading ? 'opacity-50 cursor-not-allowed' : ''
+                    }`}
+                  disabled={loading}
+                >
+                  {loading ? 'Sending...' : 'Send Message'}
+                </button>
+                {notification.show && (
+                  <div
+                    className={`mt-4 p-4 rounded-md ${notification.type === 'success'
+                      ? 'bg-green-100 text-green-700'
+                      : 'bg-red-100 text-red-700'
+                      }`}
+                  >
+                    {notification.message}
+                  </div>
+                )}
               </form>
             </div>
 
