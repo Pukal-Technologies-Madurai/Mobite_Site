@@ -8,7 +8,6 @@ import masala from "../images/corn-puff-masala-nutrition-facts.png";
 import chesse from "../images/corn-puff-chesse-nutrition-facts.png";
 import mint from "../images/corn-puff-mint-nutrition-facts.png";
 
-
 const ProductDetail = () => {
   const location = useLocation();
   const { productImgBg, productImg, productName } = location.state || {};
@@ -25,22 +24,25 @@ const ProductDetail = () => {
     "MOBITE CORN PUFF MIGHTY MINT": "Mighty Mint",
   };
 
-  const nutrition = nutritionImages[productName]
-  const subTitle = nutritionTitle[productName]
+  const nutrition = nutritionImages[productName];
+  const subTitle = nutritionTitle[productName];
 
   const handleBuyNowClick = () => {
-    window.open("https://pukalfoods.com?brand=mobite", "_blank");
+    window.open("https://pukalfoods.com/mobite", "_blank");
   };
 
   return (
     <Layout>
-      <div className="min-h-screen my-2" style={{
-        background: `linear-gradient(to right, rgba(255, 223, 0, 0.6), rgba(255, 255, 102, 0.6)), url(${backgroundImg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundBlendMode: "overlay"
-      }}>
+      <div
+        className="min-h-screen my-2"
+        style={{
+          background: `linear-gradient(to right, rgba(255, 223, 0, 0.6), rgba(255, 255, 102, 0.6)), url(${backgroundImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundBlendMode: "overlay",
+        }}
+      >
         <div className="container mx-auto px-4 py-8 sm:py-12 md:py-16 lg:py-20">
           {/* Flex container for equal height columns */}
           <div className="flex flex-col lg:flex-row max-w-7xl mx-auto h-full">
@@ -85,9 +87,10 @@ const ProductDetail = () => {
                     Description
                   </h4>
                   <p className="text-sm sm:text-base md:text-base text-gray-700 mb-6 text-justify leading-relaxed">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whole thing started from organically grown
-                    corn. We collect, bake, add {subTitle}, and seasoning masala. Finally,
-                    "Mobite" corn puff is ready to taste crispy & flavorful.
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whole thing started from
+                    organically grown corn. We collect, bake, add {subTitle},
+                    and seasoning masala. Finally, "Mobite" corn puff is ready
+                    to taste crispy & flavorful.
                   </p>
 
                   {/* Nutrition Image */}
