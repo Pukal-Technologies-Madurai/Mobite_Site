@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/Layout";
 import { Mail, Phone, MapPin } from "lucide-react";
 import backgroundImg from "../../src/images/about-bg.png";
 
-export default function contact() {
-  const [formData, setFormData] = React.useState({
+export default function Contact() {
+  const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
@@ -12,13 +12,13 @@ export default function contact() {
     message: '',
   });
 
-  const [notification, setNotification] = React.useState({
+  const [notification, setNotification] = useState({
     show: false,
     message: '',
     type: '',
   });
 
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = useState(false);
 
   // Handle input change
   const handleInputChange = (e) => {

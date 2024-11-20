@@ -1,7 +1,7 @@
 import React from "react";
+
 import aboutTop from "../images/about-us-top.png";
 import aboutBottom from "../images/homePage/a-bg-shape-img.png";
-
 import backgroundImg from "../images/about-bg.png";
 
 const About = ({ text }) => {
@@ -18,8 +18,7 @@ const About = ({ text }) => {
             <div className="w-full py-4 sm:py-6 md:py-8 lg:py-10">
                 <div className="relative w-full shadow-2xl rounded-lg flex flex-col bg-[rgba(250,251,155,0.7)]">
                     {/* Top Decorative Element */}
-                    <div
-                        className="absolute top-0 left-0 right-0 w-full h-8 sm:h-10 md:h-12 lg:h-16"
+                    <div className="absolute top-0 left-0 right-0 w-full h-8 sm:h-10 md:h-12 lg:h-16"
                         style={{
                             backgroundImage: `url(${aboutTop})`,
                             backgroundPosition: "center",

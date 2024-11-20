@@ -2,27 +2,19 @@ import React from "react";
 import connect from "../images/connect.png";
 import facebook from "../images/facebook.png";
 import instagram from "../images/instagram.png";
+import connectUs from "../images/homePage/petter-bg1.png";
+
 import youtube from "../images/youtube.png";
 import twitter from "../images/twitter.png";
-
-import connectUs from "../images/homePage/petter-bg1.png";
 import connectUs1 from "../images/homePage/petter-bg2.png";
 
 const SocialDiv = () => {
     const socialLinks = [
         { icon: facebook, href: "https://www.facebook.com/people/Mobiteindia/61565652641786/", label: "Facebook" },
-        { icon: instagram, href: "https://www.instagram.com/mobiteindia/", label: "Instagram" },
+        { icon: instagram, href: "https://www.instagram.com/mobiteindia/profilecard", label: "Instagram" },
         // { icon: youtube, href: "https://www.instagram.com/mobiteindia/", label: "YouTube" },
         // { icon: twitter, href: "https://www.x.com/mobiteindia/", label: "Twitter" }
     ];
-
-    const footerLinks = [
-        { text: "Contact us", href: "contact" },
-        { text: "FAQ", href: "#" },
-        { text: "Terms & Conditions", href: "#" },
-        { text: "Privacy Policy", href: "#" }
-    ];
-
 
     return (
         <section className="relative min-h-[20vh] max-h-[30vh] bg-gradient-to-b from-secondary to-secondary/90 overflow-hidden px-4 sm:px-8">

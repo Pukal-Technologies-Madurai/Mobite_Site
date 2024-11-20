@@ -1,14 +1,12 @@
 import React from "react";
-import Logo from "../images/homePage/logo.png";
 import { Link } from "gatsby";
+import Logo from "../images/homePage/logo.png";
 
 const Footer = () => {
     return (
         <footer className="h-32 flex flex-col justify-center items-center bg-primary py-8 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 mt-2">
             <Link to="/">
-                <img
-                    src={Logo}
-                    alt="Logo"
+                <img src={Logo} alt="Logo"
                     className="w-16 sm:w-20 md:w-24 lg:w-28 xl:w-32 mb-4"
                 />
             </Link>
