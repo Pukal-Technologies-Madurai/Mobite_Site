@@ -64,7 +64,7 @@ const ImageSilder = ({ images }) => {
 
     return (
         <div
-            className="relative overflow-hidden my-2"
+            className="relative overflow-hidden"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}

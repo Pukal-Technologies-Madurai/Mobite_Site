@@ -1,5 +1,4 @@
 import React from "react";
-import About from "../components/About";
 import ImageSilder from "../components/ImageSilder";
 
 import sliderOne from "../images/homePage/slider-1.jpg";
@@ -10,16 +9,16 @@ import HomeProductComp from "../components/home/products";
 import HowItsMade from "../components/home/howItsMade";
 
 const Home = () => {
-    const text = "Our journey began with a simple yet powerful idea: to create snacks that are not only tasty but also wholesome.";
+  const text =
+    "Our journey began with a simple yet powerful idea: to create snacks that are not only tasty but also wholesome.";
 
-    return (
-        <React.Fragment>
-            <About text={text} />
-            <ImageSilder images={[sliderThree, sliderTwo, sliderOne]} />
-            <HomeProductComp />
-            <HowItsMade />
-        </React.Fragment>
-    )
-}
+  return (
+    <React.Fragment>
+      <ImageSilder images={[sliderThree, sliderTwo, sliderOne]} />
+      <HomeProductComp />
+      <HowItsMade />
+    </React.Fragment>
+  );
+};
 
-export default Home
+export default Home;

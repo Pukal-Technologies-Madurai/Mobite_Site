@@ -79,7 +79,7 @@ const HomeProductComp = () => {
 
     return (
         <section
-            className="relative overflow-hidden py-6 sm:py-8 md:py-12 lg:py-16 my-2"
+            className="relative overflow-hidden py-6 sm:py-8 md:py-12 lg:py-16"
             style={{
                 background: `linear-gradient(to right, #fd974c, #ac070b), url(${backgroundImg})`,
                 backgroundSize: "cover",

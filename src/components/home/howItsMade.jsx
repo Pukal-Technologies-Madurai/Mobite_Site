@@ -8,7 +8,7 @@ import backgroundImg from "../../images/homePage/youtube-background.png";
 const HowItsMade = () => {
   return (
     <section
-      className="relative min-h-screen overflow-hidden py-4 sm:py-6 md:py-8 lg:py-10 my-2"
+      className="relative min-h-screen overflow-hidden py-4 sm:py-6 md:py-8 lg:py-10"
       style={{
         background: `linear-gradient(to right, #c00002, #f1c516), url(${backgroundImg})`,
         backgroundSize: "cover",

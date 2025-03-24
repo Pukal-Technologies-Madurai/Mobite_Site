@@ -44,17 +44,30 @@ const Navbar = () => {
               <Link
                 key={item}
                 to={`/${pageLinks[item]}`}
-                className="text-sm font-medium hover:text-gray-300 transition-colors duration-200 ease-in-out"
-                activeClassName="border-b-2 border-white"
+                className="relative text-sm font-medium group px-2 py-1"
+                activeClassName="after:w-full after:bg-white"
               >
                 {item}
+                {/* Animated underline effect */}
+                <span
+                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-out 
+                  group-hover:w-full"
+                ></span>
+                {/* Subtle top border on hover */}
+                <span
+                  className="absolute top-0 left-0 w-0 h-0.5 bg-white/30 transition-all duration-300 ease-out 
+                  group-hover:w-full"
+                ></span>
               </Link>
             ))}
             <Link
-              to="https://pukalfoods.com"
+              to="https://my-estore.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-white text-primary px-4 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200 ease-in-out"
+              className="flex items-center gap-2 bg-white text-primary px-6 py-2 rounded-full font-medium
+                transition-all duration-300 ease-in-out
+                hover:bg-gray-100 hover:shadow-lg hover:shadow-white/20
+                transform hover:-translate-y-0.5"
             >
               <ShoppingCart size={18} />
               Buy Now
@@ -65,7 +78,10 @@ const Navbar = () => {
           <div className="flex lg:hidden">
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white
+                transition-all duration-200 ease-in-out
+                hover:text-gray-300 hover:bg-white/10
+                focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >
               <span className="sr-only">Open main menu</span>
               {isOpen ? (
@@ -109,7 +125,7 @@ const Navbar = () => {
       {/* Mobile menu */}
       <div
         className={`lg:hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "block" : "hidden"
+          isOpen ? "block opacity-100" : "hidden opacity-0"
         }`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -117,8 +133,10 @@ const Navbar = () => {
             <Link
               key={item}
               to={`/${pageLinks[item]}`}
-              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 transition-colors"
-              activeClassName="bg-gray-900"
+              className="block px-3 py-2 rounded-md text-base font-medium
+                transition-all duration-200 ease-in-out
+                hover:bg-white/10 hover:pl-6"
+              activeClassName="bg-white/20"
               onClick={toggleMenu}
             >
               {item}
@@ -128,7 +146,10 @@ const Navbar = () => {
             to="https://pukalfoods.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium bg-white text-primary hover:bg-gray-100 transition-colors"
+            className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium
+              bg-white text-primary 
+              transition-all duration-200 ease-in-out
+              hover:bg-gray-100 hover:shadow-lg"
             onClick={toggleMenu}
           >
             <ShoppingCart size={18} />

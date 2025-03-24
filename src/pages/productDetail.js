@@ -28,13 +28,13 @@ const ProductDetail = () => {
   const subTitle = nutritionTitle[productName];
 
   const handleBuyNowClick = () => {
-    window.open("https://pukalfoods.com/mobite", "_blank");
+    window.open("https://my-estore.com", "_blank");
   };
 
   return (
     <Layout>
       <div
-        className="min-h-screen my-2"
+        className="min-h-screen"
         style={{
           background: `linear-gradient(to right, rgba(255, 223, 0, 0.6), rgba(255, 255, 102, 0.6)), url(${backgroundImg})`,
           backgroundSize: "cover",

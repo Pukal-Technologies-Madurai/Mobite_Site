@@ -84,7 +84,7 @@ export default function Contact() {
 
   return (
     <Layout>
-      <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 my-2"
+      <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8"
         style={{
           background: `linear-gradient(to right, rgba(255, 223, 0, 0.6), rgba(255, 255, 102, 0.6)), url(${backgroundImg})`,
           backgroundSize: "cover",

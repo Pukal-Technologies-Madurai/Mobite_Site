@@ -12,60 +12,56 @@ const SocialDiv = () => {
     const socialLinks = [
         { icon: facebook, href: "https://www.facebook.com/people/Mobiteindia/61565652641786/", label: "Facebook" },
         { icon: instagram, href: "https://www.instagram.com/mobiteindia/profilecard", label: "Instagram" },
-        // { icon: youtube, href: "https://www.instagram.com/mobiteindia/", label: "YouTube" },
-        // { icon: twitter, href: "https://www.x.com/mobiteindia/", label: "Twitter" }
+        { icon: youtube, href: "https://www.youtube.com/@mobiteindia", label: "YouTube" },
+        { icon: twitter, href: "https://www.x.com/mobiteindia/", label: "Twitter" }
     ];
 
     return (
-        <section className="relative min-h-[20vh] max-h-[30vh] bg-gradient-to-b from-secondary to-secondary/90 overflow-hidden px-4 sm:px-8">
-            {/* Decorative Background Elements */}
-            <div className="absolute inset-0 w-full h-full pointer-events-none">
-                <div
-                    className="absolute bottom-0 left-0 w-1/2 h-full bg-left-bottom bg-no-repeat opacity-50 md:opacity-100"
-                    style={{
-                        backgroundImage: `url(${connectUs})`,
-                        backgroundSize: "cover",  // Ensures the background scales properly
-                        backgroundPosition: "left", // Keeps it centered
-                    }}
-                />
+        <section className="relative py-16 bg-gradient-to-br from-secondary via-secondary/95 to-secondary/90">
+            {/* Modern Wave Shape Overlay */}
+            <div className="absolute inset-0 overflow-hidden">
+                <svg className="absolute bottom-0 w-full h-48 text-white/5" viewBox="0 0 1440 320">
+                    <path fill="currentColor" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
             </div>
 
-            {/* Content Container */}
-            <div className="relative z-10 container mx-auto h-full px-6 sm:px-12 lg:px-44 py-6 sm:py-8">
-                <div className="flex flex-col md:flex-row items-center justify-between w-full space-y-6 md:space-y-0">
-                    {/* Connect Image */}
-                    <div className="w-full md:w-1/2 flex justify-center">
-                        <img
-                            src={connect}
-                            alt="Connect With Us"
-                            className="w-56 sm:w-60 md:w-64 lg:w-72 xl:w-80 2xl:w-96 max-w-full h-auto transition-all duration-300"
-                        />
+            <div className="relative z-10 container mx-auto px-6 lg:px-8">
+                <div className="flex flex-col items-center space-y-12">
+                    {/* Header Section */}
+                    <div className="text-center">
+                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Connect With Us</h2>
+                        <p className="text-white/80 max-w-2xl mx-auto">Stay updated with our latest news, updates, and exciting offers through our social media channels.</p>
                     </div>
 
-                    {/* Social Media Links */}
-                    <div className="w-full md:w-1/2 flex justify-center items-center">
-                        <div className="flex gap-6 sm:gap-8">
-                            {socialLinks.map((social, index) => (
-                                <a
-                                    key={index}
-                                    href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="transform hover:scale-125 transition-transform duration-300"
-                                >
+                    {/* Social Media Icons */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+                        {socialLinks.map((social, index) => (
+                            <a
+                                key={index}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group"
+                            >
+                                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 transition-all duration-300 
+                                    hover:bg-white/20 hover:shadow-xl hover:shadow-white/10 
+                                    transform hover:-translate-y-2">
                                     <img
                                         src={social.icon}
                                         alt={social.label}
-                                        className="w-[40px] sm:w-[50px] md:w-[60px] lg:w-[70px] xl:w-[80px] object-contain"
+                                        className="w-12 h-12 object-contain mx-auto transition-transform duration-300 group-hover:scale-110"
                                     />
-                                </a>
-                            ))}
-                        </div>
+                                    <p className="text-white/90 text-center mt-3 text-sm font-medium">
+                                        {social.label}
+                                    </p>
+                                </div>
+                            </a>
+                        ))}
                     </div>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default SocialDiv
+export default SocialDiv;
