@@ -28,7 +28,7 @@ const ProductDetail = () => {
   const subTitle = nutritionTitle[productName];
 
   const handleBuyNowClick = () => {
-    window.open("https://my-estore.com", "_blank");
+    window.open("https://mobite.dotpe.in/store/1/delivery#6096061", "_blank");
   };
 
   return (

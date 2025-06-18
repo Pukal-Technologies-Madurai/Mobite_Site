@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, Zap } from "lucide-react";
 import logo from "../images/homePage/logo.png";
 import { Link } from "gatsby";
 
@@ -60,8 +60,22 @@ const Navbar = () => {
                 ></span>
               </Link>
             ))}
+
             <Link
-              to="https://my-estore.com"
+              to="https://my-estore.com/mobite"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-primary text-white px-6 py-2 rounded-full border-2 
+                border-white font-medium transition-all duration-300 ease-in-out
+                hover:bg-primary/80 hover:shadow-lg hover:shadow-white/20
+                transform hover:-translate-y-0.5"
+            >
+              <ShoppingCart size={18} />
+              Bulk Order
+            </Link>
+
+            <Link
+              to="https://mobite.dotpe.in/store/1/delivery#6096061"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-white text-primary px-6 py-2 rounded-full font-medium
@@ -69,7 +83,7 @@ const Navbar = () => {
                 hover:bg-gray-100 hover:shadow-lg hover:shadow-white/20
                 transform hover:-translate-y-0.5"
             >
-              <ShoppingCart size={18} />
+              <Zap size={18} />
               Buy Now
             </Link>
           </div>
