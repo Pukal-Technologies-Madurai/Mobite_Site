@@ -157,7 +157,7 @@ const Navbar = () => {
             </Link>
           ))}
           <Link
-            to="https://pukalfoods.com"
+            to="https://mobite.dotpe.in/store/1/delivery"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium
